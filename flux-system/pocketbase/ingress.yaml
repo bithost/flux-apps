@@ -14,8 +14,8 @@ spec:
       kind: Rule
       services:
         - name: pocketbase
-          namespace: default
-          port: 80
+          namespace: pocketbase
+          port: 8090
       middlewares:
         - name: redirect-https
         # - name: keda-http-addon-interceptor
