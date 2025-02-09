@@ -22,4 +22,4 @@ spec:
         #   namespace: keda
 
   tls:
-    secretName: pocket-app-tls
+    secretName: pocket-lanlab-xyz-tls
