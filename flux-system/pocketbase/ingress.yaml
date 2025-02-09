@@ -13,7 +13,7 @@ spec:
     - match: Host(`pocket.lanlab.xyz`)
       kind: Rule
       services:
-        - name: pocket-app-service
+        - name: pocketbase
           namespace: default
           port: 80
       middlewares:
