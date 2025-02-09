@@ -18,16 +18,9 @@ spec:
         image: ghcr.io/muchobien/pocketbase:latest
         ports:
         - containerPort: 8090
-        env:
-        - name: PB_PUBLIC_URL
-          value: "https://pocket.lanlab.xyz"
         volumeMounts:
         - name: pb-data
           mountPath: /pb_data
-        securityContext:
-          runAsUser: 1000
-          runAsGroup: 1000
-          fsGroup: 1000
       volumes:
       - name: pb-data
         persistentVolumeClaim:
