@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: pocket-lanlab-xyz-cert
-  namespace: default
+  namespace: pocket
 spec:
   secretName: pocket-lanlab-xyz-tls
   issuerRef:

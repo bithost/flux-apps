@@ -1,25 +1,20 @@
+---
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
-  name: pocketbase-app
-  namespace: pocketbase
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-production
-    kubernetes.io/ingress.class: traefik
+  name: pocket-app-http
+  namespace: pocket
 spec:
   entryPoints:
-    - websecure
+    - web
   routes:
     - match: Host(`pocket.lanlab.xyz`)
       kind: Rule
       services:
         - name: pocket-app-service
-          namespace: default
           port: 80
       middlewares:
-        - name: redirect-https
         # - name: keda-http-addon-interceptor
         #   namespace: keda
+        - name: redirect-https
 
-  tls:
-    secretName: pocket-app-tls
