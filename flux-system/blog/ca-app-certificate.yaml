@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: blog-app-tls
+  namespace: default
+spec:
+  secretName: blog-app-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: app2.lanlab.xyz
+  dnsNames:
+    - app2.lanlab.xyz

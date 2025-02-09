@@ -1,0 +1,20 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: blog-app-http
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`app2.lanlab.xyz`)
+      kind: Rule
+      services:
+        - name: blog-app-service
+          port: 80
+      middlewares:
+        # - name: keda-http-addon-interceptor
+        #   namespace: keda
+        - name: redirect-https
+
