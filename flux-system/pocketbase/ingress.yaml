@@ -18,6 +18,8 @@ spec:
           port: 8090
       middlewares:
         - name: redirect-https
+        - name: headers-middleware
+          namespace: pocketbase
         # - name: keda-http-addon-interceptor
         #   namespace: keda
 

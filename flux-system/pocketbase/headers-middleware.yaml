@@ -1,0 +1,14 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: headers-middleware
+  namespace: pocketbase
+spec:
+  headers:
+    customRequestHeaders:
+      X-Real-Ip: "{{ .RemoteAddr }}"
+      X-Forwarded-Proto: "{{ .Scheme }}"
+      X-Forwarded-For: "{{ .RemoteAddr }}"
+      Connection: ""
+    customResponseHeaders:
+      X-Powered-By: ""
