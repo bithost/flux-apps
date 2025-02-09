@@ -6,7 +6,9 @@ metadata:
 spec:
   secretName: pocket-lanlab-xyz-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-production
     kind: ClusterIssuer
   dnsNames:
     - pocket.lanlab.xyz
+
+
