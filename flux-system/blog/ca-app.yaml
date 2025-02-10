@@ -20,6 +20,8 @@ spec:
         ports:
         - containerPort: 5000
         env:
+        - name: POCKETBASE_URL
+          value: "https://pocket.lanlab.xyz"
         - name: POCKETBASE_ADMIN_EMAIL
           valueFrom:
             secretKeyRef:

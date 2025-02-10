@@ -1,0 +1,21 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: blog-app
+  namespace: flux-system
+spec:
+  image: tadziz/webapp
+  interval: 1m # Check for new images every minute
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: blog-app
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: blog-app
+  policy:
+    semver:
+      range: '>=0.0.0' # Accept all versions, you can restrict this to specific ranges
