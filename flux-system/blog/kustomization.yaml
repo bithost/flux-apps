@@ -5,3 +5,4 @@ resources:
   - ca-app-ingressroute.yaml
   - ca-app.yaml
   - ca-app-certificate.yaml
+  - blog-secrets.yaml

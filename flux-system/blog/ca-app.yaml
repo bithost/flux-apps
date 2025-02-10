@@ -19,6 +19,17 @@ spec:
         image: tadziz/webapp:latest
         ports:
         - containerPort: 5000
+        env:
+        - name: POCKETBASE_ADMIN_EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: blog-secrets
+              key: POCKETBASE_ADMIN_EMAIL
+        - name: POCKETBASE_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: blog-secrets
+              key: POCKETBASE_ADMIN_PASSWORD
         resources:
           requests:
             cpu: 100m
