@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: blog-app
-        image: tadziz/webapp:1.0.100
+        image: tadziz/webapp:1.0.101
         ports:
         - containerPort: 5000
         env:
